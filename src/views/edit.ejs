@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('partials/head') %>
+
+    <body>
+
+        <%- include('partials/header') %>
+
+            <main>
+                <section class="edicion">
+                    <h2>Edición de Producto</h2>
+                    <form action="/productos/<%=  product.id %>?_method=PUT" method="POST"
+                        enctype="multipart/form-data">
+                        <div class="separador">
+                            <label>Nombre</label>
+                            <div class="container-input">
+                                <input type="text" name="name" value="<%= product.name %>">
+                            </div>
+                        </div>
+                        <div class="separador">
+                            <label for="image">Imagen</label>
+                            <div class="container-input">
+                                <input type="file" name="image">
+                                <input type="hidden" name="oldImage" value="<%= product.image %>">
+                            </div>
+                        </div>
+                        <div class="separador">
+                            <label for="price">Precio</label>
+                            <div class="container-input">
+                                <input type="text" name="price" value="<%= product.price %>">
+                            </div>
+                        </div>
+                        <div class="separador">
+                            <label for="description">Descripción</label>
+                            <div class="container-input">
+                                <input type="text" name="description" value="<%= product.description %>">
+                            </div>
+                        </div>
+
+                        <div class="separador">
+                            <label for="descuento">Descuento</label>
+                            <div class="container-input">
+                                <input type="text" name="discount" value="<%= product.discount  %>">
+                            </div>
+                        </div>
+                        <div class="separador"></div>
+
+
+                        <div class="separador">
+                            <label for="brand">Brand</label>
+                            <select id="brand" name="brand">
+                                <% for (let i=0; i < productBrand.length; i++){ %>
+                                    <%if(productBrand[i].dataValues.id === product.brands.dataValues.id){%>
+                                        <option value=<%=productBrand[i].dataValues.id %> selected><%=
+                                                productBrand[i].dataValues.name %>
+                                        </option>
+                                        <%}else{%>
+                                            <option value=<%=productBrand[i].dataValues.id %>><%=
+                                                    productBrand[i].dataValues.name %>
+                                            </option>
+                                            <%}%>
+                                                <% } %>
+                            </select>
+                        </div>
+
+                        <div class="separador">
+                            <label for="category">Categoria</label>
+                            <select id="category" name="category">
+                                <% for (let i=0; i < productCategory.length; i++){ %>
+                                    <%if(productCategory[i].dataValues.id === product.categories.dataValues.id){%>
+                                        <option value=<%=productCategory[i].dataValues.id %> selected><%=
+                                                productCategory[i].dataValues.name %>
+                                        </option>
+                                        <%}else{%>
+                                            <option value=<%=productCategory[i].dataValues.id %>><%=
+                                                    productCategory[i].dataValues.name %>
+                                            </option>
+                                            <%}%>
+                                                <% } %>
+                            </select>
+                        </div>
+
+                        <div class="separador">
+                            <label for="color">Color</label>
+                            <select name="color" id="color">
+                                <% for (let i=0; i < productColor.length; i++){ %>
+                                    <% if(productColor[i].dataValues.id === product.colors.dataValues.id){%>
+                                        <option value=<%=productColor[i].dataValues.id %> selected><%=
+                                                productColor[i].dataValues.name %>
+                                        </option>
+                                        <%}else{%>
+                                            <option value=<%=productColor[i].dataValues.id %>><%=
+                                                    productColor[i].dataValues.name %>
+                                            </option>
+                                            <%}%>
+                                                <% } %>
+                            </select>
+                        </div>
+
+                        <div>
+                            <button type="submit">Editar producto</button>
+                        </div>
+                        
+                    </form>
+                </section>
+            </main>
+
+
+
+
+
+
+    </body>
+
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('partials/head')%>
+
+    <body>
+        <%- include('partials/header')%>
+            <main class="login2">
+                <section class="inicio-secion2">
+                    <input type="checkbox" id="click">
+                    <label for="click" class="chatsito">
+                <i class="fab fa-facebook-messenger"></i>
+                <i class="fas fa-times"></i>
+            </label>
+                    <div class="box2">
+                        <div class="head-text">
+                            Querés Hablar? - Online</div>
+                        <div class="chat-box">
+                            <div class="desc-text">
+                                Por favor este chat es para uso comercial, no incurra en cualquier tipo de violencia</div>
+                            <form action="#" method="GET" enctype="multipart/form-data">
+                                <div class="field">
+                                    <input type="text" placeholder="Nombre" required>
+                                </div>
+                                <div class="field">
+                                    <input type="email" placeholder="Email" name="email" required>
+                                </div>
+                                <div class="field textarea">
+                                    <changeit cols="30" rows="10" placeholder="Explain your queries.." required></changeit>
+                                </div>
+                                <div class="field">
+                                    <button type="submit">Iniciar Chat</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <section class="login">
+                        <form id="formularioLogin" class="formularioLogin" action="/users/inicio-sesion" method="POST" novalidate>
+                            <div class="contenedor-login">
+                                <h1>Login</h1>
+
+
+                                <div class="input-contenedor" id="grupo__correo">
+                                    <label for="correo" class="formulario__label">Correo</label>
+                                    <i class="fas fa-envelope icon"></i>
+                                    <input type="email" name="correo" id="correo" class="formulario__input" required>
+                                    <i class="formulario__validacion-estado" class="fas fa-times-circle"></i>
+                                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.
+                                </div>
+
+
+                                <div class="input-contenedor" id="grupo__password">
+                                    <label for="password" class="formulario__label">Contraseña</label>
+                                    <i class="fas fa-key icon"></i>
+                                    <input type="password" name="password" id="password" class="formulario__input" required>
+                                    <i class="formulario__validacion-estado" class="fas fa-times-circle"></i>
+                                    <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+
+                                </div>
+
+                                <div class="container-recordame">
+                                    <input type="checkbox" id="" name="recordame">
+                                    <label for="" class="recordame">Recordame</label>
+                                </div>
+                                <input type="submit" value="Iniciar Sesión" class="button">
+                                <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+                                <p>¿No tienes una cuenta? <a class="link" href="/users/registro">Registrate </a></p>
+                                <p><a href="#">Recuperar Contraseña</a></p>
+                            </div>
+                        </form>
+                    </section>
+                </section>
+
+            </main>
+            <script src="/js/login.js"></script>
+    </body>
+
+</html>
